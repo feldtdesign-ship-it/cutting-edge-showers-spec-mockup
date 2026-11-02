@@ -84,20 +84,20 @@ body.menu-open .top{background:var(--bg)}
 .menu .small{margin-top:40px;font-size:14px;color:var(--fog);text-align:center}
 
 /* hero: the tile wall, with the glass in front of it */
-.hero{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,80px);align-items:center;min-height:calc(100svh - 60px);padding:clamp(40px,5vw,72px) var(--pad);background-color:var(--tile);background-image:var(--stack);background-size:120px 60px;overflow:hidden}
+.hero{--T:120px;position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,80px);align-items:center;min-height:calc(100svh - 60px);padding:clamp(40px,5vw,72px) var(--pad);background-color:var(--tile);background-image:var(--stack);background-size:var(--T) calc(var(--T) / 2);overflow:hidden}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(0deg,var(--bg),rgba(245,248,247,0));pointer-events:none}
 .hero .copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
 .hero h1{font-size:clamp(38px,5.2vw,84px);line-height:.98;letter-spacing:-.035em}
 .hero .sub{max-width:40ch;color:var(--ink2)}
 .hero .acts{display:flex;flex-wrap:wrap;gap:12px}
-.board{position:relative;z-index:2;width:100%;max-width:620px;justify-self:end;aspect-ratio:1/1.02}
-.board .chip{position:absolute;display:block}
-.board .door{left:31%;top:0;width:40%;aspect-ratio:9/15;z-index:2;animation:settle 1.1s var(--ease) .2s both;--r:0deg}
-.board .side{left:0;top:24%;width:33%;aspect-ratio:3/4;transform:rotate(-3deg);animation:settle 1.1s var(--ease) .05s both;--r:-3deg}
-.board .low{left:69%;top:34%;width:31%;aspect-ratio:3/4;transform:rotate(2deg);animation:settle 1.1s var(--ease) .35s both;--r:2deg}
-.board .chip{box-shadow:0 18px 30px -18px rgba(16,20,23,.55)}
-@media (max-width:640px){.board .tab{font-size:10.5px;letter-spacing:.08em;padding:6px 8px}.board{aspect-ratio:1/1.12}}
-@keyframes settle{from{opacity:0;transform:translateY(26px) rotate(calc(var(--r) * 2))}to{opacity:1;transform:rotate(var(--r))}}
+.board{position:relative;z-index:2;width:100%;max-width:680px;justify-self:end;height:calc(var(--T) * 3)}
+.board .chip{position:absolute;top:0;display:block;width:calc(var(--T) * 2 - 6px);height:calc(var(--T) * 3 - 6px);box-shadow:0 18px 30px -18px rgba(16,20,23,.55);animation:settle .9s var(--ease) both}
+/* three photos side by side, each two tile-columns wide and three tile-rows tall; left and top edges sit on grout lines */
+.board .side{left:0;animation-delay:.05s}
+.board .door{left:calc(var(--T) * 2);animation-delay:.2s}
+.board .low{left:calc(var(--T) * 4);animation-delay:.35s}
+@media (max-width:640px){.board .tab{font-size:9.5px;letter-spacing:.06em;padding:5px 6px;white-space:nowrap}}
+@keyframes settle{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
 /* intro: two columns */
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start;padding:clamp(80px,10vw,150px) var(--pad) clamp(48px,6vw,80px);max-width:1360px;margin:0 auto}
@@ -602,6 +602,18 @@ footer .legal{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
   /* plans draw their glass line once, as they come into view */
   const pio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('drawn'); pio.unobserve(e.target); } }), { threshold: .35 });
   $$('.plan').forEach(p => pio.observe(p));
+
+
+  /* hero: the board is six tile-columns wide; size the tiles to fit and line the grid up with it */
+  const hero = $('#top'), boardEl = $('.board');
+  const alignGrid = () => {
+    const w = boardEl.getBoundingClientRect().width;
+    hero.style.setProperty('--T', (w / 6).toFixed(3) + 'px');
+    const hb = hero.getBoundingClientRect(), bb = boardEl.getBoundingClientRect();
+    hero.style.backgroundPosition = (bb.left - hb.left).toFixed(2) + 'px ' + (bb.top - hb.top).toFixed(2) + 'px';
+  };
+  alignGrid(); addEventListener('resize', alignGrid); addEventListener('load', alignGrid);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignGrid);
 
   /* hero: the chip under the pointer takes the coral tab */
   const bchips = $$('.board .chip');
