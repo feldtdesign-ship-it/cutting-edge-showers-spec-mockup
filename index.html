@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frameless Shower Doors · Cutting Edge Glass</title>
+<meta name="description" content="Custom frameless shower doors, mirrors and glass for homes and boats across Northern New Jersey. Owner supervised, fabricated in Parsippany, since 1998.">
+<meta name="theme-color" content="#F5F8F7">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Cutting Edge Glass, Inc.","telephone":"+1-973-664-9893","faxNumber":"+1-973-664-9802","email":"sales@njshowerdoors.com","foundingDate":"1998","address":{"@type":"PostalAddress","streetAddress":"14 Eastmans Road","addressLocality":"Parsippany","addressRegion":"NJ","postalCode":"07054","addressCountry":"US"},"areaServed":"Northern New Jersey"}
+</script>
+<style>
+/* Sister of the commercial specification sheet: the same document, written for a homeowner and set on a tile wall.
+   Contrast on the sheet (#FBFCFB): ink 17.9, ink-2 7.6, coral text 5.6, seam 5.6. Black on the coral fill: 6.5. */
+:root{
+  --bg:#F5F8F7; --tile:#EEF3F2; --grout:#D3DDDB; --sheet:#FBFCFB; --ink:#101417; --ink2:#4A5359; --rule:#C5D1CF; --tint:#EEF3F2;
+  --wall:#6B7479; --seam:#2D6A70; --edge:#7FB0B5; --pop:#FF5A6E; --pop-text:#C42340; --lowiron:#E6F0EE; --fog:#B8BDC0; --mist:#8E959A; --steel:#5B6268; --graphite:#121416; --trim:#050606;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif; --sans:'Jost','Futura','Century Gothic',system-ui,sans-serif;
+  --pad:clamp(16px,4vw,56px); --ease:cubic-bezier(.2,.7,.1,1);
+  --stack:linear-gradient(var(--grout) 2px,transparent 2px),linear-gradient(90deg,var(--grout) 2px,transparent 2px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;padding-top:60px;background-color:var(--tile);background-image:var(--stack);background-size:120px 60px;background-attachment:fixed;color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-kerning:normal;overflow-x:hidden;caret-color:var(--pop-text)}
+::selection{background:var(--edge);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,dl,dd,figure,ol,ul{margin:0}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;font-stretch:112%;text-wrap:balance;color:var(--ink)}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+footer :focus-visible,.menu :focus-visible{outline-color:var(--pop)}
+[hidden]{display:none!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;white-space:nowrap;font:500 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--ink);background:transparent;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--ink);color:var(--sheet)}
+.btn.pop{background:var(--pop);border-color:var(--pop);color:var(--ink);font-weight:600}
+.btn.pop:hover{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.mockbar{background:var(--ink);color:var(--lowiron);text-align:center;font-size:13px;font-weight:500;letter-spacing:.02em;padding:8px var(--pad);line-height:1.4}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 var(--pad);background:rgba(245,248,247,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .logo img{height:34px;width:auto}
+.top .right{display:flex;align-items:center;gap:8px}
+.top .btn{min-height:44px;padding:0 16px}
+.menubtn{display:inline-flex;align-items:center;justify-content:center;width:48px;min-height:44px;padding:0;color:var(--ink);background:transparent;border:1.5px solid var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.menubtn:hover{background:var(--ink);color:var(--sheet)}
+.menubtn .hx{display:none}
+.menubtn[aria-expanded="true"] .hx{display:inline}
+.menubtn[aria-expanded="true"] .hb{display:none}
+.menu{position:fixed;inset:0;z-index:45;background:rgba(16,20,23,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+body.menu-open .menu{opacity:1;visibility:visible}
+.menu a{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(30px,5vw,60px);letter-spacing:-.02em;line-height:1.15;color:var(--fog);transition:color .3s}
+.menu a:hover{color:var(--pop)}
+.menu .small{margin-top:40px;font-size:14px;color:var(--fog);text-align:center}
+
+/* layout: contents on the left, sheets on the tile wall */
+.wrap{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(20px,3vw,44px);max-width:1300px;margin:0 auto;padding:clamp(24px,3vw,44px) var(--pad) 0;align-items:start}
+.toc{position:sticky;top:84px;display:flex;flex-direction:column;gap:2px;font-size:14px;padding:16px 10px 14px;background:rgba(251,252,251,.93);border:1px solid rgba(16,20,23,.16);border-right:3px solid var(--edge);border-bottom:3px solid var(--edge);max-height:calc(100svh - 104px);overflow-y:auto}
+.toc h2{font-family:var(--sans);font-stretch:100%;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px 12px}
+.toc a{display:block;padding:8px 12px;color:var(--ink2);border-left:2px solid transparent;line-height:1.3;transition:color .3s,border-color .3s,background .3s}
+.toc a small{display:block;font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.toc a.sub{padding-left:24px;font-size:13px}
+.toc a:hover,.toc a.on{color:var(--ink);border-left-color:var(--pop);background:var(--tint)}
+.toc .btn{margin:10px 2px 0;white-space:normal;text-align:center;line-height:1.25;padding:12px 8px}
+.toc .btn.ghost{margin-top:6px}
+
+.sheet{background:var(--sheet);padding:clamp(24px,4.4vw,72px);margin:0 0 24px;box-shadow:0 30px 50px -34px rgba(16,20,23,.55),0 0 0 1px rgba(16,20,23,.08);scroll-margin-top:76px}
+.run{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:clamp(28px,4vw,52px);border-bottom:2px solid var(--ink);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.foot{display:flex;justify-content:space-between;gap:16px;margin-top:clamp(28px,4vw,48px);padding-top:10px;border-top:1px solid var(--rule);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+
+.title{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,44px);align-items:end;margin-bottom:clamp(28px,4vw,48px)}
+.title .no{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(44px,7.4vw,112px);line-height:.9;letter-spacing:-.04em}
+.title .nm{padding-bottom:8px;font-size:15px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);max-width:30ch}
+h1{font-size:clamp(38px,5.4vw,84px);line-height:.98;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--pop-text)}
+.lead{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,48px);align-items:end;margin-top:clamp(24px,3vw,40px)}
+.lead p{max-width:42ch;color:var(--ink2)}
+.lead .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.edge{background:var(--tint);border-right:3px solid var(--edge);border-bottom:3px solid var(--edge);overflow:hidden}
+.lead figure{aspect-ratio:3/4;max-height:520px;justify-self:end;width:min(100%,380px)}
+.lead figure img,.edge img{width:100%;height:100%;object-fit:cover}
+
+.part{font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.03em;margin-bottom:clamp(28px,3.4vw,48px)}
+.art{display:grid;grid-template-columns:1fr;gap:12px clamp(14px,2vw,28px);padding:clamp(22px,2.6vw,34px) 0;border-top:1px solid var(--rule);scroll-margin-top:84px}
+.art:first-of-type{border-top:2px solid var(--ink)}
+.art > .n{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:20px;letter-spacing:-.01em;color:var(--seam);font-variant-numeric:tabular-nums;padding-top:2px}
+.art h3{font-size:clamp(18px,1.6vw,22px);letter-spacing:.02em;text-transform:uppercase;font-stretch:100%;margin-bottom:12px}
+.art p + p{margin-top:12px}
+.art p{color:var(--ink2);max-width:62ch}
+.art .sub{display:grid;grid-template-columns:34px 1fr;gap:6px 12px;margin-top:6px;color:var(--ink2)}
+.art .sub b{font-weight:600;color:var(--ink)}
+.link{color:var(--pop-text);text-decoration:underline;text-underline-offset:4px;font-weight:500;font-size:16px}
+.link:hover{color:var(--ink)}
+
+/* a layout clause: plan drawing beside the text; the glass line draws once */
+.plan{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(16px,2.4vw,32px);align-items:start}
+.plan svg{width:100%;height:auto;background:#fff;border:1px solid var(--rule)}
+.plan .gl{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.8s var(--ease)}
+.js .plan:not(.drawn) .gl{stroke-dashoffset:1}
+.plan dl{margin-top:14px;border-top:1px solid var(--rule)}
+.plan dl div{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.plan dt{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);padding-top:2px}
+.plan .acts{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:16px}
+.plan .acts .btn{min-height:42px;padding:0 18px}
+.legend{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--ink2)}
+.legend i{display:inline-block;width:22px;height:0;vertical-align:middle;margin-right:8px}
+.legend .tl{border-top:5px solid var(--wall)}
+.legend .pn{border-top:3px solid var(--seam)}
+
+.coats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+.coat{padding:22px;border:1px solid var(--rule);background:#fff;border-right:3px solid var(--edge);border-bottom:3px solid var(--edge)}
+.coat .big{display:block;font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(34px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:var(--pop-text)}
+.coat h4{font-size:20px;letter-spacing:-.02em;margin:10px 0 6px}
+.coat p{font-size:16px}
+.rows{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--rule)}
+.rows li{display:grid;grid-template-columns:minmax(120px,.6fr) 2fr minmax(90px,.5fr);gap:18px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--rule)}
+.rows .nm{font-family:var(--display);font-weight:700;font-stretch:112%;font-size:18px;letter-spacing:-.01em}
+.rows .d{color:var(--ink2);font-size:16px}
+.rows .w{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);text-align:right}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);margin-top:6px}
+.facts div{padding:14px 12px 0 0}
+.facts dt{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.facts dd{font-family:var(--display);font-weight:700;font-stretch:112%;font-size:clamp(17px,1.5vw,21px);line-height:1.2;margin-top:4px}
+
+.steps{list-style:none;margin:6px 0 0;padding:0;counter-reset:s;border-top:1px solid var(--rule)}
+.steps li{counter-increment:s;position:relative;padding:14px 0 14px 44px;border-bottom:1px solid var(--rule);color:var(--ink2);font-size:17px;line-height:1.5}
+.steps li::before{content:counter(s,upper-alpha) ".";position:absolute;left:0;top:14px;font-family:var(--display);font-weight:800;font-stretch:112%;font-size:17px;color:var(--ink)}
+.steps b{color:var(--ink);font-weight:600}
+.never-h{display:block;margin:18px 0 6px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--pop-text)}
+.never{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.never li{padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--rule);color:var(--ink2);font-size:16px}
+.never li::before{content:"";position:absolute;left:2px;top:50%;width:16px;height:2px;background:var(--pop-text)}
+
+/* photographs */
+.groups{display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)}
+.group{display:grid;grid-template-columns:minmax(150px,.5fr) 2.5fr;gap:clamp(16px,2.4vw,32px);align-items:start;border-top:1px solid var(--rule);padding-top:18px;scroll-margin-top:84px}
+.group:first-child{border-top:0;padding-top:0}
+.group h4{font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.1}
+.group p{font-size:15px;margin-top:8px}
+.gp{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,.8vw,12px)}
+.gp figure{aspect-ratio:3/4;margin:0}
+.gp button,.masonry button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.gp button:focus-visible,.masonry button:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+.gp img{transition:transform 1.2s var(--ease)}
+.gp button:hover img,.masonry button:hover img{transform:scale(1.04)}
+.allbar{margin-top:clamp(24px,3vw,36px)}
+#all{margin-top:clamp(24px,3vw,36px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.fchip{min-height:44px;padding:0 18px;font:500 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:transparent;border:1.5px solid var(--ink);cursor:pointer;transition:background .3s,color .3s}
+.fchip:hover{background:var(--tint)}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.masonry{columns:3 180px;column-gap:10px}
+.masonry figure{margin:0 0 10px;break-inside:avoid}
+.masonry img{width:100%;height:auto;transition:transform 1.2s var(--ease)}
+.count{margin-top:18px;font-size:14px;color:var(--ink2)}
+dialog.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:#ECEDEC}
+dialog.lb::backdrop{background:rgba(5,6,6,.94)}
+.lb .stage{position:relative;width:100%;height:100%;display:grid;place-items:center;padding:56px 16px}
+.lb img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+.lb button{position:absolute;min-width:48px;min-height:48px;display:grid;place-items:center;color:#ECEDEC;background:rgba(18,20,22,.85);border:1px solid var(--steel);cursor:pointer;font:500 22px/1 var(--sans)}
+.lb button:hover{border-color:var(--fog)}
+.lb button:focus-visible{outline-color:var(--pop)}
+.lb .x{top:12px;right:12px}
+.lb .pv{left:12px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:12px;top:50%;transform:translateY(-50%)}
+.lb .cap{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--fog)}
+
+/* submittal form */
+form{display:grid;grid-template-columns:1fr 1fr;gap:20px 26px;margin-top:20px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;font-weight:500;color:var(--ink2)}
+.field label b{color:var(--pop-text);font-weight:500}
+.field input,.field select,.field textarea{font:inherit;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:1.5px solid var(--ink2);border-radius:0;padding:10px 0;min-height:46px;-webkit-appearance:none;appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 10px) 52%,calc(100% - 5px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.field select:invalid{color:var(--ink2)}
+.field textarea{resize:vertical;min-height:90px;line-height:1.5}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink2)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--pop-text);border-bottom-width:3px}
+.field input:user-invalid,.field select:user-invalid{border-bottom-color:#B3261E}
+form .go{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:6px}
+form .go small{font-size:14px;color:var(--ink2)}
+.sent{grid-column:1/-1;font-size:15px;color:var(--ink2);min-height:1em}
+.sent a{color:var(--pop-text);text-decoration:underline}
+.contact{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.contact div{padding:16px 12px 0 0;font-size:16px;display:flex;flex-direction:column;gap:4px}
+.contact span:first-child{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.contact a:hover{color:var(--pop-text);text-decoration:underline}
+.end{text-align:center;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);margin-top:clamp(36px,5vw,64px);padding-top:16px;border-top:2px solid var(--ink)}
+
+footer{background:var(--trim);color:var(--mist);padding:clamp(60px,7vw,100px) var(--pad) 44px;gap:22px;font-size:15px;text-align:center;display:flex;flex-direction:column;align-items:center;margin-top:24px}
+footer img{width:min(240px,58vw)}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;column-gap:28px;font-size:14px;color:var(--fog)}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+footer nav a:hover{color:#fff}
+footer .legal{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+
+@media (max-width:1000px){
+  .wrap{grid-template-columns:1fr}
+  .toc{position:sticky;top:60px;z-index:20;flex-direction:row;gap:0;margin:0 calc(var(--pad) * -1);padding:0 var(--pad);background:rgba(245,248,247,.97);border:0;border-bottom:1px solid var(--rule);max-height:none;overflow-x:auto;overflow-y:hidden}
+  .toc h2,.toc .btn,.toc a.sub{display:none}
+  .toc a{flex:0 0 auto;border-left:0;border-bottom:2px solid transparent;padding:12px 14px;white-space:nowrap}
+  .toc a small{display:none}
+  .toc a:hover,.toc a.on{border-left:0;border-bottom-color:var(--pop)}
+  .sheet,.art,.group{scroll-margin-top:124px}
+  .lead{grid-template-columns:1fr}
+  .lead figure{justify-self:start}
+  .facts{grid-template-columns:1fr 1fr;row-gap:8px}
+  .contact{grid-template-columns:1fr 1fr}
+  .coats{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .plan{grid-template-columns:1fr}
+  .plan svg{max-width:300px}
+  .group{grid-template-columns:1fr}
+  .gp{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .title{grid-template-columns:1fr;gap:10px}
+  .rows li{grid-template-columns:1fr;gap:4px}
+  .rows .w{text-align:left}
+  form{grid-template-columns:1fr}
+  .contact,.facts{grid-template-columns:1fr}
+  h1{font-size:clamp(34px,9.6vw,52px)}
+  .masonry{columns:2}
+}
+@media (max-width:420px){.top .logo img{height:28px}.top .btn{padding:0 12px;letter-spacing:.08em}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .plan:not(.drawn) .gl{stroke-dashoffset:0}*{transition:none!important}}
+@media (forced-colors:active){.btn,.fchip,.menubtn{border:2px solid ButtonText}}
+@media print{
+  @page{margin:16mm}
+  body{background:#fff;padding-top:0;font-size:12pt}
+  .mockbar,.top,.menu,.toc,footer,.btn,.acts,form,.menubtn,.allbar,#all,dialog{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .sheet{box-shadow:none;padding:0;margin:0;break-after:page}
+  .art,.plan,.group{break-inside:avoid}
+  .js .plan:not(.drawn) .gl{stroke-dashoffset:0}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="mockbar" role="note">Specification-sheet design · Mockup for review · Not for publication · Content and photos come from the current njshowerdoors.com</div>
+
+<div class="top">
+  <a class="logo" href="#top"><img src="img/logo-dark.png" alt="Cutting Edge Glass, home"></a>
+  <div class="right">
+    <a class="btn pop" href="#submit">Contact</a>
+    <button type="button" class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Menu"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><g class="hb"><path d="M3 6h18M3 12h18M3 18h18"/></g><g class="hx"><path d="M5 5l14 14M19 5L5 19"/></g></svg></button>
+  </div>
+</div>
+
+<div class="menu" id="menu">
+  <a href="#general">About</a>
+  <a href="#layouts">Layouts</a>
+  <a href="#execution">Before the tile</a>
+  <a href="#photos">Photographs</a>
+  <a href="#submit">Get an estimate</a>
+  <a href="https://feldtdesign-ship-it.github.io/cutting-edge-glass-spec-mockup/">Commercial glass ↗</a>
+  <p class="small">973.664.9893 · 14 Eastmans Road, Parsippany</p>
+</div>
+
+<div class="wrap" id="top">
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <a href="#general" data-s="general">About<small>Who we are</small></a>
+    <a href="#layouts" data-s="layouts">Layouts<small>Three plans, and the glass</small></a>
+    <a class="sub" href="#plan-inline" data-s="plan-inline">In-line</a>
+    <a class="sub" href="#plan-neo" data-s="plan-neo">Neo-angle</a>
+    <a class="sub" href="#plan-right" data-s="plan-right">Right angle</a>
+    <a class="sub" href="#glass" data-s="glass">Glass</a>
+    <a href="#execution" data-s="execution">Before the tile<small>For the builder</small></a>
+    <a href="#photos" data-s="photos">Photos<small>Twelve favorites</small></a>
+    <a href="#submit" data-s="submit">Estimate<small>Send us a photo</small></a>
+    <a class="btn pop" href="#submit">Get an estimate</a>
+    <button type="button" class="btn" id="printBtn">Print or save as PDF</button>
+  </nav>
+
+  <main>
+    <section class="sheet" id="general" aria-labelledby="h-general">
+      <div class="run"><span>Cutting Edge Glass, Inc.</span><span>Cutting Edge Glass</span></div>
+      <h1>Frameless showers,<br><em>fitted to your tile.</em></h1>
+      <div class="lead">
+        <div>
+          <p>Custom glass shower doors, mirrors and more for homes and boats. Designed with you, made in Parsippany, installed under the owner’s supervision.</p>
+          <div class="acts"><a class="btn pop" href="#submit">Get an estimate</a><a class="btn" href="#photos">See the photographs</a></div>
+        </div>
+        <figure class="edge"><img src="https://njshowerdoors.com/wp-content/uploads/2016/04/image12.jpg" alt="A neo-angle frameless shower, finished install" fetchpriority="high"></figure>
+      </div>
+
+      <h2 class="part" id="h-general" style="margin-top:clamp(56px,7vw,96px)">About us</h2>
+      <div class="art" id="summary">
+        <div>
+          <h3>Who we are</h3>
+          <p>Inspired tile work deserves glass that gets out of its way. Since 1998 we have invested in our people, our workshop and our equipment so the work meets the standard of owners who notice the details. We make frameless shower doors for homes, commercial installations and boats, plus glass handrails and etched art&nbsp;panels.</p>
+        </div>
+      </div>
+      <div class="art" id="qual">
+        <div>
+          <h3>Qualifications</h3>
+          <dl class="facts">
+            <div><dt>Since</dt><dd>1998</dd></div>
+            <div><dt>Supervised by</dt><dd>The owner, start to finish</dd></div>
+            <div><dt>Visits</dt><dd>By appointment</dd></div>
+            <div><dt>Serving</dt><dd>Northern New Jersey</dd></div>
+          </dl>
+          <p style="margin-top:16px">Owner supervised in every part of design, production, scheduling and installation. Licensed in New Jersey, NJ HIC 13VH04431600.</p>
+        </div>
+      </div>
+      <div class="foot"><span>Cutting Edge Glass · Mockup for review</span><span>Page 1 of 5</span></div>
+    </section>
+
+    <section class="sheet" id="layouts" aria-labelledby="h-layouts">
+      <div class="run"><span>Cutting Edge Glass, Inc.</span><span>Cutting Edge Glass</span></div>
+      <h2 class="part" id="h-layouts">Layouts and glass</h2>
+      <p style="color:var(--ink2);max-width:60ch;margin:-12px 0 24px">Every shower is one of three plans. The drawings show the plan view, where glass meets tile. Pick the layout closest to your bathroom and we will work out the rest on site.</p>
+
+      <div class="art" id="plan-inline">
+        <div class="plan">
+          <svg viewBox="0 0 200 140" role="img" aria-label="Plan view of an in-line enclosure: three tile walls and one glass front" fill="none" stroke-linecap="square">
+            <path d="M30 120V28H170V120" stroke="#6B7479" stroke-width="7"/>
+            <path class="gl" pathLength="1" d="M30 120H170" stroke="#2D6A70" stroke-width="3"/>
+          </svg>
+          <div>
+            <h3>In-line</h3>
+            <p>Three tile walls and one open side, closed with any run of doors and panels side by side. A double or bi-pass slider is the most common. A barn-style slider behind a fixed panel is gaining ground. A hinged door and panels also work, on glass-to-glass or wall-mount hinges.</p>
+            <dl>
+              <div><dt>Walls</dt><dd>Three tile, one open</dd></div>
+              <div><dt>Doors</dt><dd>Bi-pass, barn-style slider, or hinged</dd></div>
+              <div><dt>Max door</dt><dd>About 28&nbsp;in. wide</dd></div>
+            </dl>
+            <div class="acts"><a class="btn" href="#submit" data-project="In-line enclosure">Estimate an in-line</a><a class="link" href="#g-inline">In-line photographs &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="art" id="plan-neo">
+        <div class="plan">
+          <svg viewBox="0 0 200 140" role="img" aria-label="Plan view of a neo-angle enclosure: two tile walls in a corner and three glass panels across it at 135 degrees" fill="none" stroke-linecap="square">
+            <path d="M130 24H48V104" stroke="#6B7479" stroke-width="7"/>
+            <path class="gl" pathLength="1" d="M130 24V66L92 104H48" stroke="#2D6A70" stroke-width="3" stroke-linejoin="miter"/>
+          </svg>
+          <div>
+            <h3>Neo-angle</h3>
+            <p>A corner enclosure. Three glass panels, one of them the door, meet the two shower walls and each other at 135° joints. It can also be built as a wall-mounted door with two panels meeting in the&nbsp;corner.</p>
+            <dl>
+              <div><dt>Walls</dt><dd>Two tile, in a corner</dd></div>
+              <div><dt>Glass</dt><dd>Three panels at 135°</dd></div>
+              <div><dt>Max door</dt><dd>About 26&nbsp;in., more with a header or top support</dd></div>
+            </dl>
+            <div class="acts"><a class="btn" href="#submit" data-project="Neo-angle enclosure">Estimate a neo-angle</a><a class="link" href="#g-neo">Neo-angle photographs &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="art" id="plan-right">
+        <div class="plan">
+          <svg viewBox="0 0 200 140" role="img" aria-label="Plan view of a right-angle enclosure: two tile walls in a corner and two glass sides meeting at 90 degrees" fill="none" stroke-linecap="square">
+            <path d="M150 24H46V112" stroke="#6B7479" stroke-width="7"/>
+            <path class="gl" pathLength="1" d="M150 24V112H46" stroke="#2D6A70" stroke-width="3"/>
+          </svg>
+          <div>
+            <h3>Right angle</h3>
+            <p>Classic, bold and well defined: every corner glass joint forms a right angle. Swinging and sliding doors both work, and decorative hardware is&nbsp;available.</p>
+            <dl>
+              <div><dt>Walls</dt><dd>Two tile, in a corner</dd></div>
+              <div><dt>Glass</dt><dd>Joints at 90°</dd></div>
+              <div><dt>Doors</dt><dd>Swinging or sliding</dd></div>
+            </dl>
+            <div class="acts"><a class="btn" href="#submit" data-project="Right-angle enclosure">Estimate a right angle</a><a class="link" href="#g-right">Right-angle photographs &rarr;</a></div>
+          </div>
+        </div>
+        <p class="legend" aria-hidden="true" style="grid-column:2"><span><i class="tl"></i>Tile wall</span><span><i class="pn"></i>Glass</span></p>
+      </div>
+
+      <div class="art" id="glass">
+        <div>
+          <h3>Glass</h3>
+          <p>Two protective treatments, so the glass looks new for longer and takes less work to&nbsp;clean.</p>
+          <div class="coats">
+            <article class="coat">
+              <span class="big">90%</span>
+              <h4>Enduro Shield</h4>
+              <p>An easy-clean coating that forms an ultra-long-lasting invisible shield on glass, ceramic tile, grout, stainless steel and chrome. It reduces cleaning time by up to&nbsp;90%.</p>
+            </article>
+            <article class="coat">
+              <span class="big">Ion-beam</span>
+              <h4>ShowerGuard</h4>
+              <p>The first shower glass with permanent protection against corrosion and staining. Manufactured and sealed with Guardian’s patented ion-beam process.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="art" id="more">
+        <div>
+          <h3>Also made to order</h3>
+          <ul class="rows">
+            <li><span class="nm">Mirrors</span><span class="d">¼ in., American made, cut to your space. For bathrooms, home gyms, dressing areas and bedrooms. Set in channel, clips or glue-back.</span><span class="w">Custom and stock</span></li>
+            <li><span class="nm">Hardware</span><span class="d">Shower hinges, handles, pulls, knobs and brackets. Browse finishes from the Portals and C.&nbsp;R. Laurence catalogs.</span><span class="w">Finishes</span></li>
+            <li><span class="nm">Gym mirrors</span><span class="d">Wall mirrors for home gyms, fabricated to the wall.</span><span class="w">Residential</span></li>
+            <li><span class="nm">Glass shelving</span><span class="d">Custom-cut glass shelves.</span><span class="w">Residential</span></li>
+            <li><span class="nm">Glass railings</span><span class="d">Glass handrails and railings for stairs and terraces.</span><span class="w">Residential</span></li>
+            <li><span class="nm">Etched art panels</span><span class="d">Unique etched glass installations.</span><span class="w">Custom</span></li>
+            <li><span class="nm">Glass white boards</span><span class="d">Stylish, functional dry-erase boards in glass, supplied and installed for&nbsp;offices.</span><span class="w">Office</span></li>
+            <li><span class="nm">Boats</span><span class="d">Frameless shower doors for boats.</span><span class="w">Marine</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="art" id="commercial">
+        <div>
+          <h3>Commercial glazing</h3>
+          <p>We also install custom glass windows and doors rated for a wide range of architectural and commercial uses, in new construction and remodels. Curtain walls, entrances, storefronts, operable windows, heavy glass doors, interior fit-ups and&nbsp;more.</p>
+          <p style="margin-top:14px"><a class="link" href="https://feldtdesign-ship-it.github.io/cutting-edge-glass-spec-mockup/">Commercial glazing &rarr;</a></p>
+        </div>
+      </div>
+      <div class="foot"><span>Cutting Edge Glass · Mockup for review</span><span>Page 2 of 5</span></div>
+    </section>
+
+    <section class="sheet" id="execution" aria-labelledby="h-exec">
+      <div class="run"><span>Cutting Edge Glass, Inc.</span><span>Cutting Edge Glass</span></div>
+      <h2 class="part" id="h-exec">Before the tile goes up</h2>
+      <div class="art">
+        <div>
+          <h3>For the tile setter and the builder</h3>
+          <p>What to know so the enclosure is safe, stays clean and doesn’t&nbsp;leak.</p>
+          <ol class="steps">
+            <li><b>Use 90°, 135° or 180° angles.</b> Most shower hardware is built for them, which keeps the install cost-effective and the enclosure working properly.</li>
+            <li><b>Pitch the curb toward the drain.</b> A level curb holds water. A curb sloped away from the drain leaks onto the bathroom floor.</li>
+            <li><b>Pitch saddles and bench seats inward</b> so water runs off and doesn’t sit.</li>
+            <li><b>Cap curbs with granite, marble or Corian</b> instead of tile.</li>
+            <li><b>Block the wall behind the tile</b> with wood wherever a hinge or panel will mount.</li>
+            <li><b>Keep glass tile away from hinges and clamps.</b> Breakage is likely during and after install, which means delays and repair charges.</li>
+            <li><b>Steam units need glass from curb to ceiling,</b> so vent the inside of the shower to keep moisture under control.</li>
+            <li><b>Keep body sprays and shower heads off the seams.</b> Water pressure can push water past the sweeps and seals.</li>
+            <li><b>Neo-angle with a knee wall:</b> the door must meet the structure at 90° for the hinges. Glass-to-glass joints at 135° have no such limit.</li>
+            <li><b>Leave the door clear.</b> Raised decorative tile, overhanging tile, and stone slabs on a seat or buttress wall can block its swing or leave gaps.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="art" id="care">
+        <div>
+          <h3>Keeping it clear</h3>
+          <p>Towel or squeegee the glass after every use. Left for weeks or months, water spots can become hard or impossible to remove, depending on your water chemistry. It varies from town to&nbsp;town. A glass sealant such as ClearShield cuts maintenance and cleaning time.</p>
+          <span class="never-h">Never use</span>
+          <ul class="never">
+            <li>Abrasive or soft-abrasive powders and liquids</li>
+            <li>Bleach or bleach-based cleaners</li>
+            <li>Steel or Teflon pads</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot"><span>Cutting Edge Glass · Mockup for review</span><span>Page 3 of 5</span></div>
+    </section>
+
+    <section class="sheet" id="photos" aria-labelledby="h-photos">
+      <div class="run"><span>Cutting Edge Glass, Inc.</span><span>Cutting Edge Glass</span></div>
+      <h2 class="part" id="h-photos">Photographs</h2>
+      <p style="color:var(--ink2);max-width:60ch;margin:-12px 0 28px">Twelve favorites, grouped by layout. Tap any photo to enlarge.</p>
+      <div class="groups" id="groups"></div>
+      <div class="allbar"><button class="btn" id="allBtn" type="button" aria-expanded="false" aria-controls="all">See all 40 photos</button></div>
+      <div id="all" hidden>
+        <div class="chips" role="group" aria-label="Filter the full set">
+          <button class="fchip" type="button" data-f="all" aria-pressed="true">All</button>
+          <button class="fchip" type="button" data-f="inline" aria-pressed="false">In-line</button>
+          <button class="fchip" type="button" data-f="neo" aria-pressed="false">Neo-angle</button>
+          <button class="fchip" type="button" data-f="right" aria-pressed="false">Right angle</button>
+        </div>
+        <div class="masonry" id="grid"></div>
+        <p class="count" id="count" role="status"></p>
+      </div>
+      <noscript><p class="count"><a class="link" href="https://njshowerdoors.com/residential-glass-installation-rockaway/">View the gallery on njshowerdoors.com</a></p></noscript>
+      <div class="foot"><span>Cutting Edge Glass · Mockup for review</span><span>Page 4 of 5</span></div>
+    </section>
+
+    <section class="sheet" id="submit" aria-labelledby="h-submit">
+      <div class="run"><span>Cutting Edge Glass, Inc.</span><span>Cutting Edge Glass</span></div>
+      <h2 class="part" id="h-submit">Send us a photo</h2>
+      <div class="art">
+        <div>
+          <h3>Request an estimate</h3>
+          <p>For a quick estimate, text a picture to 973.404.0896, or email or fax your plans. We visit by appointment only. The owners read every request.</p>
+          <form id="form" aria-label="Request an estimate">
+            <div class="field"><label for="f-name">Name <b aria-hidden="true">*</b></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Email <b aria-hidden="true">*</b></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-town">Town</label><input id="f-town" name="town" autocomplete="address-level2"></div>
+            <div class="field full"><label for="f-type">What do you need? <b aria-hidden="true">*</b></label><select id="f-type" name="project" required><option value="" selected disabled>Select…</option><option>In-line enclosure</option><option>Neo-angle enclosure</option><option>Right-angle enclosure</option><option>Not sure which layout</option><option>Mirror</option><option>Glass shelving or railings</option><option>Glass white board</option><option>Commercial glass</option><option>Something else</option></select></div>
+            <div class="field full"><label for="f-notes">Tell us about the space</label><textarea id="f-notes" name="notes" rows="3" placeholder="Rough size, tile type, timing. Photos can follow by text."></textarea></div>
+            <div class="go"><button class="btn pop" type="submit">Get an estimate</button><small>The owners read every request.</small></div>
+            <p class="sent" id="sent" role="status"></p>
+          </form>
+          <div class="contact">
+            <div><span>Call</span><a href="tel:+19736649893">973.664.9893</a></div>
+            <div><span>Text a photo</span><a href="sms:+19734040896">973.404.0896</a></div>
+            <div><span>Email</span><a href="mailto:sales@njshowerdoors.com">sales@njshowerdoors.com</a></div>
+            <div><span>Shop · Fax 973.664.9802</span><span>14 Eastmans Road, Parsippany, NJ 07054</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span>Cutting Edge Glass · Mockup for review</span><span>Page 5 of 5</span></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <img src="img/logo-light.png" alt="Cutting Edge Glass">
+  <nav aria-label="Footer"><a href="#general">General</a><a href="#layouts">Layouts</a><a href="#execution">Before the tile</a><a href="#photos">Photographs</a><a href="#submit">Estimate</a><a href="https://feldtdesign-ship-it.github.io/cutting-edge-glass-spec-mockup/">Commercial glass ↗</a></nav>
+  <span>14 Eastmans Road, Parsippany, NJ 07054 · <a href="tel:+19736649893">973.664.9893</a></span>
+  <span class="legal">Cutting Edge Glass, Inc. · NJ HIC 13VH04431600 · © <span id="yr">2026</span></span>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="stage">
+    <img id="lbImg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <button type="button" class="x" id="lbX" aria-label="Close">✕</button>
+    <button type="button" class="pv" id="lbP" aria-label="Previous photo">‹</button>
+    <button type="button" class="nx" id="lbN" aria-label="Next photo">›</button>
+    <div class="cap" id="lbC"></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  $('#yr').textContent = new Date().getFullYear();
+
+  const btn = $('#menuBtn');
+  const setMenu = open => { document.body.classList.toggle('menu-open', open); btn.setAttribute('aria-expanded', open); };
+  btn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  $$('.menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  $$('[data-project]').forEach(a => a.addEventListener('click', () => { $('#f-type').value = a.dataset.project; }));
+  $('#printBtn').addEventListener('click', () => print());
+
+  /* photos. Hot-linked from the current site for this mockup; copy them into img/ before launch. */
+  const BASE = 'https://njshowerdoors.com/wp-content/uploads/2016/04/';
+  const KIND = { inline: [3,4,6,7,8,23,26,27,35], neo: [12,15,18,19,28,30,37], right: [1,2,5,9,10,11,13,14,16,17,21,24,25,29,31,32,39,40], mirror: [20] };
+  const LABEL = { inline: 'In-line shower', neo: 'Neo-angle shower', right: 'Right-angle shower', mirror: 'Mirror', other: 'Custom glass' };
+  const WIDE = [7], SQ = [1,2,3,4,32,33,36,40]; /* 700x394, and 525x700; everything else is 394x700 */
+  const photos = [];
+  for (let n = 1; n <= 40; n++) {
+    const kind = Object.keys(KIND).find(k => KIND[k].includes(n)) || 'other';
+    const [w, h] = WIDE.includes(n) ? [700, 394] : SQ.includes(n) ? [525, 700] : [394, 700];
+    photos.push({ n, kind, w, h, src: BASE + (n === 1 ? 'imag1' : 'image' + n) + '.jpg', label: LABEL[kind] });
+  }
+  const grid = $('#grid'), count = $('#count');
+  let shown = photos, cur = 0;
+  const thumb = (p, list, i) => {
+    const fig = document.createElement('figure'); fig.className = 'edge';
+    fig.innerHTML = `<button type="button" aria-label="Enlarge photo: ${p.label}"><img loading="lazy" width="${p.w}" height="${p.h}" src="${p.src}" alt="${p.label}, finished install"></button>`;
+    fig.querySelector('button').addEventListener('click', () => open(list, i));
+    return fig;
+  };
+  const draw = f => {
+    const list = f === 'all' ? photos : photos.filter(p => p.kind === f);
+    grid.innerHTML = '';
+    list.forEach((p, i) => grid.appendChild(thumb(p, list, i)));
+    count.textContent = `${list.length} photos`;
+  };
+  $$('.fchip').forEach(c => c.addEventListener('click', () => {
+    $$('.fchip').forEach(x => x.setAttribute('aria-pressed', x === c));
+    draw(c.dataset.f);
+  }));
+  draw('all');
+
+  const PICKS = [
+    ['inline', 'In-line', 'Three tile walls, one open side. Sliding or hinged doors.', [3, 7, 23, 35]],
+    ['neo', 'Neo-angle', 'A corner enclosure. Three panels meeting at 135°.', [12, 19, 30, 37]],
+    ['right', 'Right angle', 'Two glass sides at 90°. Swinging or sliding doors.', [1, 17, 29, 39]]
+  ];
+  const flat = PICKS.flatMap(g => g[3].map(n => photos[n - 1]));
+  PICKS.forEach(([k, name, blurb, ns]) => {
+    const g = document.createElement('div'); g.className = 'group'; g.id = 'g-' + k;
+    g.innerHTML = `<div><h4>${name}</h4><p>${blurb}</p></div><div class="gp"></div>`;
+    ns.forEach(n => { const p = photos[n - 1]; g.querySelector('.gp').appendChild(thumb(p, flat, flat.indexOf(p))); });
+    $('#groups').appendChild(g);
+  });
+  const allBtn = $('#allBtn'), allBox = $('#all');
+  allBtn.addEventListener('click', () => {
+    const openNow = allBox.hidden;
+    allBox.hidden = !openNow; allBtn.setAttribute('aria-expanded', openNow);
+    allBtn.textContent = openNow ? 'Hide the full set' : 'See all 40 photos';
+  });
+
+  const lb = $('#lb'), img = $('#lbImg'), cap = $('#lbC');
+  const show = i => { cur = (i + shown.length) % shown.length; const p = shown[cur]; img.src = p.src; img.alt = p.label + ', finished install'; cap.textContent = `${p.label} · ${cur + 1} of ${shown.length}`; };
+  const open = (list, i) => { shown = list; show(i); lb.showModal(); };
+  $('#lbX').addEventListener('click', () => lb.close());
+  $('#lbP').addEventListener('click', () => show(cur - 1));
+  $('#lbN').addEventListener('click', () => show(cur + 1));
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('stage')) lb.close(); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+
+  /* plans draw their glass line once, as they come into view */
+  const pio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('drawn'); pio.unobserve(e.target); } }), { threshold: .35 });
+  $$('.plan').forEach(p => pio.observe(p));
+
+  /* contents: highlight where you are */
+  const links = $$('.toc a[data-s]');
+  const ids = ['general', 'layouts', 'plan-inline', 'plan-neo', 'plan-right', 'glass', 'execution', 'photos', 'submit'];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.toggle('on', a.dataset.s === e.target.id));
+  }), { rootMargin: '-35% 0px -55% 0px' });
+  ids.forEach(id => io.observe($('#' + id)));
+
+  $('#form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const body = [...f.entries()].map(([k, v]) => `${k[0].toUpperCase() + k.slice(1)}: ${v}`).join('\n');
+    location.href = `mailto:sales@njshowerdoors.com?subject=${encodeURIComponent('Shower estimate request: ' + f.get('project'))}&body=${encodeURIComponent(body)}`;
+    $('#sent').innerHTML = 'Your email app should open with the request filled in. If it doesn’t, call <a href="tel:+19736649893">973.664.9893</a> or text a photo to 973.404.0896.';
+  });
+})();
+</script>
+</body>
+</html>
